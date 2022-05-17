@@ -26,3 +26,11 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/binance_wrapi>.
 
+## Copyright and License
+
+Copyright (c) 2022 Rolando Lucio
+
+Except as otherwise noted, BinanceWrapi source code is licensed under the [MIT License](LICENSE).
+
+
+
