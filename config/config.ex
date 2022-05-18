@@ -15,8 +15,8 @@ config :logger, :console,
 
 config :binance_wrapi,
   base_url: "binance.com",
-  api_key: System.get_env("BWRAPI_API_KEY") || "",
-  api_secret: System.get_env("BWRAPI_API_SECRET") || ""
+  api_key: System.get_env("BINANCE_API_KEY") || "",
+  api_secret: System.get_env("BINANCE_API_SECRET") || ""
 
 config :finch,
   pool_timeout: 5_000,
