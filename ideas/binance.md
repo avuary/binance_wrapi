@@ -1,3 +1,4 @@
+```elixir
 import Config
 
 # The intention is to configure multiple api_keys and ednpoints instead of using just one.
@@ -69,6 +70,7 @@ api_keys = [
     label: "FULL API",
     description: "Reading API",
     priority: 1,
+    method: :priority, # :priority || :random || :round_robin || :failover || :load_balance || :race
     key_type: :hmac_sha256,
     restrictions: [
       reading: [
@@ -103,3 +105,38 @@ api_keys = [
   }
 
 ]
+
+
+
+testnet: %{
+  vanilla_options: %{
+   rest: [
+     "testnet.binanceops.com"
+   ],
+   wss: [
+     "testnetws.binanceops.com"
+   ]
+ }
+}
+
+binance_com = %{
+  vanilla_options: %{
+    rest: [
+      "vapi.binance.com"
+    ],
+    wss: [
+      "vstream.binance.com"
+    ]
+  }
+  spot: %{
+    rest: [
+      [ url: "api.binance.com" , port: "" ],
+      [ url: "api1.binance.com", port: "" ],
+      [ url: "api2.binance.com", port: "" ],
+      [ url: "api3.binance.com", port: "" ],
+    ],
+    wss: [
+      "stream.binance.com"
+    ]
+}
+```

@@ -14,7 +14,8 @@ config :logger, :console,
 
 
 config :binance_wrapi,
-  base_url: "binance.com",
+  api_url: "api.binance.com",
+  fapi_url: "fapi.binance.com",
   api_key: System.get_env("BINANCE_API_KEY") || "",
   api_secret: System.get_env("BINANCE_API_SECRET") || ""
 
