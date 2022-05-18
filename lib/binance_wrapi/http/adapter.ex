@@ -7,6 +7,10 @@ defmodule BinanceWrapi.Http.Adapter do
   require Logger
 
   @default_adapter BinanceWrapi.Adapters.Finch
+
+  @doc """
+  Performs the http request. operations to the given adapter.
+  """
   @spec request(
           :delete | :get | :head | :options | :patch | :post | :put | binary,
           binary | URI.t(),
