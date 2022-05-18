@@ -21,4 +21,9 @@ defmodule BinanceWrapi.Query do
     :ok
   end
 
+  defp restify(:none, method, url, headers, body, opts) do
+    Logger.debug("Restify Public #{method} #{url}")
+    Rest.request(method, url, headers, body, opts)
+  end
+
 end
