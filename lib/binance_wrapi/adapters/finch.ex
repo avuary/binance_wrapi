@@ -25,6 +25,7 @@ defmodule BinanceWrapi.Adapters.Finch do
           {:error, %{:__exception__ => true, :__struct__ => atom, optional(atom) => any}}
           | {:ok, Finch.Response.t()}
   def request(method, url, headers \\ [], body \\ nil, opts \\ []) do
+    Logger.debug("adapter.finch #{method} request to #{url}#{if body, do: "\nBody: #{inspect body}"}")
     config = Application.get_env(:parser_app, __MODULE__, [])
     {app_finch, finch_opts } = Keyword.pop(config, :otp_app, @default_finch)
       # config[:otp_app] || @default_finch

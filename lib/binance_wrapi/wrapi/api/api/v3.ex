@@ -19,14 +19,15 @@ defmodule BinanceWrapi.Wrapi.Api.Api.V3 do
       signed: :none,
       weight: 1,
       weight_type: :ip,
-      data_source: :memory
+      data_source: :memory,
+      visibility: :public
     ]
     params_mandatory = []
     params_optional = []
 
     payload = params_mandatory ++ params_optional
 
-    Query.execute(payload, endpoint_opts)
+    Query.execute(payload, endpoint_opts, endpoint_opts[:taxo])
   end
 
   @doc """
@@ -46,14 +47,15 @@ defmodule BinanceWrapi.Wrapi.Api.Api.V3 do
       signed: :none,
       weight: 1,
       weight_type: :ip,
-      data_source: :memory
+      data_source: :memory,
+      visibility: :public
     ]
     params_mandatory = []
     params_optional = []
 
     payload = params_mandatory ++ params_optional
 
-    Query.execute(payload, endpoint_opts)
+    Query.execute(payload, endpoint_opts, endpoint_opts[:taxo])
   end
 
   @doc """
@@ -73,14 +75,15 @@ defmodule BinanceWrapi.Wrapi.Api.Api.V3 do
       signed: :none,
       weight: 10,
       weight_type: :ip,
-      data_source: :memory
+      data_source: :memory,
+      visibility: :public
     ]
     params_mandatory = []
     params_optional = exchange_info_params(symbols)
 
     payload = params_mandatory ++ params_optional
 
-    Query.execute(payload, endpoint_opts)
+    Query.execute(payload, endpoint_opts, endpoint_opts[:taxo])
   end
 
   defp exchange_info_params(params) when is_binary(params) do

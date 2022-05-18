@@ -25,7 +25,7 @@ defmodule BinanceWrapi.Http.Adapter do
           keyword
         ) :: { :error, term } | { :ok, term }
   def request(method, url, headers, body \\nil, opts \\ []) do
-    Logger.debug("#{method} request to #{url}#{if body, do: "\nBody: #{inspect body}"}")
+    Logger.debug("http.adapter #{method} request to #{url}#{if body, do: "\nBody: #{inspect body}"}")
     config = Application.get_env(:binance_wrapi, __MODULE__, [])
     adapter = config[:adapter] || @default_adapter
     adapter.request(method, url, headers, body, opts)
