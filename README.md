@@ -4,7 +4,9 @@ Wrapper for the Binance API
 
 Replicate the structure of the binance endpoints <https://binance-docs.github.io/apidocs/>
 
+## Related
 
+If you need a higher level of abstraction consider using the Binance SDK  (WIP)
 
 
 **TODO: Add description**
